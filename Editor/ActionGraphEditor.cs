@@ -50,11 +50,14 @@ namespace ActionGraph
             {
                 CurrentGraph = GameObject.FindObjectOfType<Graph>();
             }
-            
-            CurrentGraph.Initialise();
-            CurrentGraph.Load();
-            mInitialised = true;
-            mDefaultColor = GUI.backgroundColor;
+
+            if (CurrentGraph != null)
+            {
+                CurrentGraph.Initialise();
+                CurrentGraph.Load();
+                mInitialised = true;
+                mDefaultColor = GUI.backgroundColor;
+            }
         }
 
         // -------------------------------------------------------------------------------
